@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/background_style"
+    tools:context="com.example.sabriatialidiet.activities.StatisticActivity">
+    <RelativeLayout
+        style="@style/header_style">
+        <TextView
+            style="@style/header_text"
+            android:text = "@string/statistic">
+        </TextView>
+        <Button
+            style="@style/header_button"
+            android:id="@+id/from_statistic_to_menu"
+            android:text="@string/to_menu">
+        </Button>
+
+
+
+
+    </RelativeLayout>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+
+
+        <ImageButton
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:id="@+id/top_left"
+
+            android:background="@null"
+            android:src="@drawable/pizza"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/set"/>
+
+        <ImageButton
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:id="@+id/top_right"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+
+            android:background="@null"
+            android:src="@drawable/kadu"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/set"/>
+
+        <ImageButton
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/bottom_left"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+
+            android:background="@null"
+            android:src="@drawable/hamburger"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/set"/>
+
+        <ImageButton
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:id="@+id/bottom_right"
+
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+
+            android:background="@null"
+            android:src="@drawable/ghifi"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/set"/>
+
+        <ImageButton
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+
+            android:background="@null"
+            android:src="@drawable/kalam"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/set"/>
+
+        <ImageButton
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+
+            android:background="@null"
+            android:src="@drawable/pechpech"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/set"/>
+
+        <ImageButton
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+
+            android:background="@null"
+            android:src="@drawable/shir"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/set"/>
+
+        <ImageButton
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+
+            android:background="@null"
+            android:src="@drawable/limu"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/set"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <ImageButton
+            app:layout_constraintTop_toTopOf="@id/top_left"
+            app:layout_constraintLeft_toLeftOf="@id/top_left"
+            app:layout_constraintBottom_toBottomOf="@id/bmi_tv"
+            app:layout_constraintRight_toRightOf="@id/bmi_tv"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+
+            android:background="@null"
+            android:src="@drawable/sharab"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/set"/>
+
+        <ImageButton
+            app:layout_constraintTop_toTopOf="@id/top_right"
+            app:layout_constraintRight_toRightOf="@id/top_right"
+            app:layout_constraintBottom_toBottomOf="@id/bmi_tv"
+            app:layout_constraintLeft_toLeftOf="@id/bmi_tv"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+
+            android:background="@null"
+            android:src="@drawable/fries"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/set"/>
+
+        <ImageButton
+            app:layout_constraintBottom_toBottomOf="@id/bottom_left"
+            app:layout_constraintLeft_toLeftOf="@id/bottom_left"
+            app:layout_constraintRight_toRightOf="@id/bmi_tv"
+            app:layout_constraintTop_toTopOf="@id/bmi_tv"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+
+            android:background="@null"
+            android:src="@drawable/bastani"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/set"/>
+
+        <ImageButton
+            app:layout_constraintBottom_toBottomOf="@id/bottom_right"
+            app:layout_constraintRight_toRightOf="@id/bottom_right"
+            app:layout_constraintLeft_toLeftOf="@id/bmi_tv"
+            app:layout_constraintTop_toTopOf="@id/bmi_tv"
+
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+
+            android:background="@null"
+            android:src="@drawable/ojagh"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/set"/>
+
+
+
+
+
+
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textSize="@dimen/mbi_text"
+            android:fontFamily="sans-serif"
+            android:textStyle="italic|bold"
+            android:id="@+id/bmi_tv">
+
+        </TextView>
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</LinearLayout>

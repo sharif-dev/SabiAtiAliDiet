@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">#bf4080</color>
+    <color name="colorPrimaryDark">#bf4080</color>
+    <color name="colorAccent">#4d004d</color>
+    <color name="my_text_color">#000000</color>
+    <color name="my_background_color">#ffe6cc</color>
+    <color name="my_header_color">#bf4080</color>
+    <color name="my_db_item_color">#800080</color>
+    <color name="my_db_menu_color">#eeeeee</color>
 </resources>
