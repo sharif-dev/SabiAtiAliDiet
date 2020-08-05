@@ -20,7 +20,7 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         profile = Profile.getProfile(this);
-        findViewById(R.id.from_profile_to_menu).setOnClickListener(new ToWindowOnClickWithClosing(this, MyMenuActivity.class));//кнопка "В меню"
+        findViewById(R.id.from_profile_to_menu).setOnClickListener(new ToWindowOnClickWithClosing(this, MyMenuActivity.class));
         ((EditText) findViewById(R.id.profile_age)).setText(profile.getAge());
         ((EditText) findViewById(R.id.profile_height)).setText(profile.getHeight());
         ((EditText) findViewById(R.id.profile_weight)).setText(profile.getWeight());

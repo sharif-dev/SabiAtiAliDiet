@@ -78,21 +78,16 @@ public class DiaryActivity extends AppCompatActivity {
 
         profile = Profile.getProfile(this);
         db = DataBase.getDataBase(this);
-        setViewDay(new MyDate()); // set current date
+        setViewDay(new MyDate());
 
-        // eaten dishes
         dishesData = DataBase.cursorToArrayList(db.getAllDayDishes(viewDay.getDate()));
-        // collation columns forming
         Log.d("atiiyeh", "onCreayete: " +  dishesData.toString() + "");
         String[] from = new String[]{DataBase.DISH_COLUMN_NAME, DataBase.DAYS_DISH_COLUMN_WEIGHT};//columns names
         int[] to = new int[]{R.id.db_item_name, R.id.db_item_right_text}; // places to write (View id)
 
         dishesAdapter = new SimpleAdapter(this, dishesData, R.layout.database_item, from, to);
 
-
-        // exercises for day
         exercisesData = DataBase.cursorToArrayList(db.getAllDayExercises(viewDay.getDate()));
-        // collation columns forming
         from = new String[]{DataBase.EXERCISE_COLUMN_NAME, DataBase.DAYS_EXERCISE_COLUMN_QUANTITY};//columns names
 
         exercisesAdapter = new SimpleAdapter(this, exercisesData, R.layout.database_item, from, to);
@@ -142,10 +137,9 @@ public class DiaryActivity extends AppCompatActivity {
 
         public void onDateSet(DatePicker view, int year, int monthOfYear,
                               int dayOfMonth) {
-            String newDate = dayOfMonth + " / " + (monthOfYear + 1) + " / " + year;
+            String newDate = dayOfMonth + "/" + (monthOfYear + 1) + "/" + year;
             try {
                 changeViewDay(new MyDate(Day.format.parse(newDate)));
-//                changing view based on new date
                 Toast.makeText(DiaryActivity.this, getString(R.string.changed_date), Toast.LENGTH_SHORT).show();
 
             } catch (ParseException e) {
@@ -169,7 +163,7 @@ public class DiaryActivity extends AppCompatActivity {
         setViewDay(date);
     }
 
-    private void saveViewDay()//закончить
+    private void saveViewDay()
     {
         viewDay.setRecord(((EditText) findViewById(R.id.diary_record)).getText().toString());
         for (Map<String, Object> dish : dishesData)

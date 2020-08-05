@@ -12,7 +12,7 @@ import java.util.Map;
 
 
 public class Day {
-    public static final SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
+    public static final SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
     private static final String[] DAYS_OF_WEEK = {"Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
     private static final String[] MONTH_OF_YEAR = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
     private final String dayOfWeek;

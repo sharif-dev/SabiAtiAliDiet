@@ -22,7 +22,7 @@ import java.util.Map;
 public class ExerciseActivity extends AppCompatActivity {
     DataBase db;
     Map<String, Object> map;
-    ArrayList<Map<String, Object>> data; // main data
+    ArrayList<Map<String, Object>> data;
     SimpleAdapter sAdapter;
     long selectedElementId = -1;
     ListView listView;
@@ -33,7 +33,7 @@ public class ExerciseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_exercise);
         findViewById(R.id.from_exercises_to_menu).setOnClickListener(new ToWindowOnClickWithClosing(this, MyMenuActivity.class));
 
-        db = DataBase.getDataBase(this); // open DB
+        db = DataBase.getDataBase(this);
 
         data = DataBase.cursorToArrayList(db.getExercises());
 
@@ -84,7 +84,6 @@ public class ExerciseActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ExerciseEditorActivity.class);
         startActivity(intent);
         selectedElementId = -1;
-        ;
     }
 
     @Override

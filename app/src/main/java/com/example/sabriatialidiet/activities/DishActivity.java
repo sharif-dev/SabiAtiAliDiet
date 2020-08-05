@@ -34,10 +34,10 @@ public class DishActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dish);
         findViewById(R.id.from_dishes_to_menu).setOnClickListener(new ToWindowOnClickWithClosing(this, MyMenuActivity.class));
 
-        db = DataBase.getDataBase(this); // open DB
+        db = DataBase.getDataBase(this);
         data=DataBase.cursorToArrayList(db.getDishes());
 
-        // collation columns forming
+
         String[] from = new String[] {DataBase.DISH_COLUMN_NAME, DataBase.DISH_COLUMN_CALORIES_PER_100_GM }; // columns names
         int[] to = new int[] { R.id.db_item_name, R.id.db_item_right_text}; // places to write (View id)
 
@@ -75,7 +75,7 @@ public class DishActivity extends AppCompatActivity {
             Toast.makeText(this, getString(R.string.pick_dish), Toast.LENGTH_SHORT).show();
             return;
         }
-        //fill with new data
+
         Dish dish = new Dish();
         map=data.get((int)selectedElementId);
         dish.setName(map.get(DataBase.DISH_COLUMN_NAME).toString());
@@ -102,6 +102,6 @@ public class DishActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        db.close(); // close DB
+        db.close();
     }
 }
