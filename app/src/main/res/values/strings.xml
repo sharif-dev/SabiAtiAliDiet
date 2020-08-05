@@ -94,5 +94,8 @@
     <string name="exercise_formula_description_quantity">q — sets quantity</string>
     <string name="enter_exercise_time_quantity">Enter time and quantity</string>
 
+    <!--Statistics-->
+    <string name="statistic">Statistics</string>
+
 
 </resources>

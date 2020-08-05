@@ -89,11 +89,11 @@
 
                     <TextView
                         style="@style/diary_table"
-                        android:text="@string/got" />
+                        android:text="@string/gained" />
 
                     <TextView
                         style="@style/diary_table"
-                        android:text="@string/spent" />
+                        android:text="@string/lost" />
 
                     <TextView
                         style="@style/diary_table"
@@ -211,7 +211,7 @@
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginTop="10dp"
-                android:hint="@string/your_notes"
+                android:hint="@string/write_your_notes"
                 android:textColor="@color/my_text_color"
                 android:textColorHint="@color/my_text_color"
                 android:textSize="14sp" />
