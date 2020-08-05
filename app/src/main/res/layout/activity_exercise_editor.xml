@@ -82,40 +82,6 @@
             android:textSize="20sp"
             android:text = "@string/exercise_formula_p2"/>
     </LinearLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:textColor="@color/my_text_color"
-        android:textSize="20sp"
-        android:text="@string/exercise_formula_description"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp"
-        android:textColor="@color/my_text_color"
-        android:textSize="20sp"
-        android:text="@string/exercise_formula_description_weight"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp"
-        android:textColor="@color/my_text_color"
-        android:textSize="20sp"
-        android:text="@string/exercise_formula_description_time"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp"
-        android:textColor="@color/my_text_color"
-        android:textSize="20sp"
-        android:text="@string/exercise_formula_description_quantity"/>
         </LinearLayout>
     </ScrollView>
     <RelativeLayout

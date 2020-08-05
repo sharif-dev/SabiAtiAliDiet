@@ -11,7 +11,7 @@ public class Profile {
     private int age = 18;
     private int height = 175;
     private int weight = 70;
-    private int wantToloseCalorie = 1500;
+    private int calorie_to_lose = 1500;
     private static Profile profile = null;
 
     private Profile(Context context) {
@@ -22,15 +22,15 @@ public class Profile {
             editor.putInt("age", age);
             editor.putInt("height", height);
             editor.putInt("weight", weight);
-            wantToloseCalorie = 100;
-            editor.putInt("aimCalorie", wantToloseCalorie);
+            calorie_to_lose = 100;
+            editor.putInt("aimCalorie", calorie_to_lose);
             editor.apply();
         } else {
             gender = sPref.getBoolean("gender", gender);
             age = sPref.getInt("age", age);
             height = sPref.getInt("height", height);
             weight = sPref.getInt("weight", weight);
-            wantToloseCalorie = sPref.getInt("aimCalorie", wantToloseCalorie);
+            calorie_to_lose = sPref.getInt("aimCalorie", calorie_to_lose);
         }
     }
 
@@ -84,8 +84,8 @@ public class Profile {
         return gender;
     }
 
-    public int getWantToloseCalorie() {
-        return wantToloseCalorie;
+    public int getCalorie_to_lose() {
+        return calorie_to_lose;
     }
 
     public void setGender(Activity activity, boolean gender) {
@@ -114,7 +114,7 @@ public class Profile {
 
     public void setAimCalorie(Activity activity, int aimCalorie) {
         if (activity instanceof ProfileActivity) {
-            this.wantToloseCalorie = aimCalorie;
+            this.calorie_to_lose = aimCalorie;
         }
     }
 
@@ -125,7 +125,7 @@ public class Profile {
         editor.putInt("age", age);
         editor.putInt("height", height);
         editor.putInt("weight", weight);
-        editor.putInt("aimCalorie", wantToloseCalorie);
+        editor.putInt("aimCalorie", calorie_to_lose);
         editor.commit();
     }
 }

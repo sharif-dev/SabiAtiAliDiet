@@ -217,7 +217,7 @@ public class DiaryActivity extends AppCompatActivity {
         Integer spentCalories = viewDay.getSpentCalories(profile.getWeight());
         ((TextView) findViewById(R.id.diary_calorie_get)).setText(gotCalories.toString());
         ((TextView) findViewById(R.id.diary_calorie_spend)).setText(spentCalories.toString());
-        Integer result = profile.getWantToloseCalorie() - spentCalories + gotCalories;
+        Integer result = profile.getCalorie_to_lose() - spentCalories + gotCalories;
         ((TextView) findViewById(R.id.diary_calorie_need)).setText((result).toString());
         findViewById(R.id.diary_calorie_get).requestLayout();
         findViewById(R.id.diary_calorie_spend).requestLayout();

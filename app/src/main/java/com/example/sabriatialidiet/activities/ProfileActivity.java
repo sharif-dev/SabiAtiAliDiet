@@ -25,7 +25,7 @@ public class ProfileActivity extends AppCompatActivity {
         ((EditText) findViewById(R.id.profile_height)).setText(profile.getHeight());
         ((EditText) findViewById(R.id.profile_weight)).setText(profile.getWeight());
         ((RadioButton) findViewById(R.id.profile_woman_radio_button)).setChecked(!profile.getGender());
-        ((EditText) findViewById(R.id.profile_aim_kal_number)).setText(profile.getWantToloseCalorie());
+        ((EditText) findViewById(R.id.profile_aim_kal_number)).setText(profile.getCalorie_to_lose());
 //        optimalCalorieNumber = ((TextView) findViewById(R.id.profile_optimal_kal_number));
 //        optimalCalorieNumber.setText(profile.calculateCalories() + " " + getString(R.string.kilocalories));
     }
