@@ -7,7 +7,7 @@ import android.widget.EditText;
 
 import com.example.sabriatialidiet.R;
 import com.example.sabriatialidiet.db.DataBase;
-import com.example.sabriatialidiet.entities.Exercise;
+import com.example.sabriatialidiet.models.Exercise;
 
 public class ExerciseEditorActivity extends AppCompatActivity {
     static Exercise exercise;

@@ -1,4 +1,4 @@
-package com.example.sabriatialidiet.entities;
+package com.example.sabriatialidiet.models;
 
 
 import com.example.sabriatialidiet.db.DataBase;

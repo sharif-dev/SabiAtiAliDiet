@@ -15,10 +15,10 @@ import android.widget.Toast;
 
 import com.example.sabriatialidiet.R;
 import com.example.sabriatialidiet.db.DataBase;
-import com.example.sabriatialidiet.entities.Day;
+import com.example.sabriatialidiet.models.Day;
 import com.example.sabriatialidiet.listeners.ToWindowOnClick;
 import com.example.sabriatialidiet.listeners.ToWindowOnClickWithClosing;
-import com.example.sabriatialidiet.preferences.Profile;
+import com.example.sabriatialidiet.profile.Profile;
 import com.example.sabriatialidiet.utils.MyDate;
 
 import java.text.ParseException;
@@ -66,6 +66,7 @@ public class DiaryActivity extends AppCompatActivity {
             public void onClick(View v) {
                 PickDishActivity.date = viewDay.getDate();
                 super.onClick(v);
+
             }
         });
         findViewById(R.id.diary_exercise_add_button).setOnClickListener(new ToWindowOnClick(this, PickExerciseActivity.class) {
@@ -73,21 +74,34 @@ public class DiaryActivity extends AppCompatActivity {
             public void onClick(View v) {
                 PickExerciseActivity.date = viewDay.getDate();
                 super.onClick(v);
+
             }
         });
 
+        findViewById(R.id.update_calories).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveViewDay();
+                updateCaloriesRow();
+            }
+        });
         profile = Profile.getProfile(this);
         db = DataBase.getDataBase(this);
-        setViewDay(new MyDate());
+        setViewDay(new MyDate()); // set current date
 
+        // eaten dishes
         dishesData = DataBase.cursorToArrayList(db.getAllDayDishes(viewDay.getDate()));
+        // collation columns forming
         Log.d("atiiyeh", "onCreayete: " +  dishesData.toString() + "");
         String[] from = new String[]{DataBase.DISH_COLUMN_NAME, DataBase.DAYS_DISH_COLUMN_WEIGHT};//columns names
         int[] to = new int[]{R.id.db_item_name, R.id.db_item_right_text}; // places to write (View id)
 
         dishesAdapter = new SimpleAdapter(this, dishesData, R.layout.database_item, from, to);
 
+
+        // exercises for day
         exercisesData = DataBase.cursorToArrayList(db.getAllDayExercises(viewDay.getDate()));
+        // collation columns forming
         from = new String[]{DataBase.EXERCISE_COLUMN_NAME, DataBase.DAYS_EXERCISE_COLUMN_QUANTITY};//columns names
 
         exercisesAdapter = new SimpleAdapter(this, exercisesData, R.layout.database_item, from, to);
@@ -133,22 +147,27 @@ public class DiaryActivity extends AppCompatActivity {
         }
     }
 
-    DatePickerDialog.OnDateSetListener myCallBack = new DatePickerDialog.OnDateSetListener() {
+    DatePickerDialog.OnDateSetListener myCallBack;
 
-        public void onDateSet(DatePicker view, int year, int monthOfYear,
-                              int dayOfMonth) {
-            String newDate = dayOfMonth + "/" + (monthOfYear + 1) + "/" + year;
-            try {
-                changeViewDay(new MyDate(Day.format.parse(newDate)));
-                Toast.makeText(DiaryActivity.this, getString(R.string.changed_date), Toast.LENGTH_SHORT).show();
+    {
+        myCallBack = new DatePickerDialog.OnDateSetListener() {
 
-            } catch (ParseException e) {
-                Toast.makeText(DiaryActivity.this, getString(R.string.invalid_date), Toast.LENGTH_SHORT).show();
-            } catch (NullPointerException e) {
-                Toast.makeText(DiaryActivity.this, getString(R.string.invalid_year), Toast.LENGTH_SHORT).show();
+            public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                  int dayOfMonth) {
+                String newDate = dayOfMonth + " / " + (monthOfYear + 1) + " / " + year;
+                try {
+                    changeViewDay(new MyDate(Day.format.parse(newDate)));
+//                changing view based on new date
+                    Toast.makeText(DiaryActivity.this, getString(R.string.changed_date), Toast.LENGTH_SHORT).show();
+
+                } catch (ParseException e) {
+                    Toast.makeText(DiaryActivity.this, getString(R.string.invalid_date), Toast.LENGTH_SHORT).show();
+                } catch (NullPointerException e) {
+                    Toast.makeText(DiaryActivity.this, getString(R.string.invalid_year), Toast.LENGTH_SHORT).show();
+                }
             }
-        }
-    };
+        };
+    }
 
     public void onViewDayDishes(View v) {
         showDialog(VIEW_DISHES_DIALOG);
@@ -163,7 +182,7 @@ public class DiaryActivity extends AppCompatActivity {
         setViewDay(date);
     }
 
-    private void saveViewDay()
+    private void saveViewDay()//закончить
     {
         viewDay.setRecord(((EditText) findViewById(R.id.diary_record)).getText().toString());
         for (Map<String, Object> dish : dishesData)
@@ -207,12 +226,13 @@ public class DiaryActivity extends AppCompatActivity {
     }
 
     private void updateCaloriesRow() {
+        Log.d("update", "here");
         Integer gotCalories = viewDay.getGotCalories();
         Integer spentCalories = viewDay.getSpentCalories(profile.getWeight());
-        ((TextView) findViewById(R.id.diary_calorie_get)).setText(gotCalories.toString());
-        ((TextView) findViewById(R.id.diary_calorie_spend)).setText(spentCalories.toString());
-        Integer result = profile.getCalorie_to_lose() - spentCalories + gotCalories;
-        ((TextView) findViewById(R.id.diary_calorie_need)).setText((result).toString());
+        ((TextView) findViewById(R.id.diary_calorie_get)).setText(String.valueOf(gotCalories));
+        ((TextView) findViewById(R.id.diary_calorie_spend)).setText(String.valueOf(spentCalories));
+        Integer result = profile.getCalorie_to_lose()- spentCalories + gotCalories;
+        ((TextView) findViewById(R.id.diary_calorie_need)).setText(String.valueOf(result));
         findViewById(R.id.diary_calorie_get).requestLayout();
         findViewById(R.id.diary_calorie_spend).requestLayout();
         findViewById(R.id.diary_calorie_need).requestLayout();

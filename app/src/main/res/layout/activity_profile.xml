@@ -99,15 +99,7 @@
                         android:textColor="@color/my_text_color"/>
                 </TableRow>
             </TableLayout>
-            <TextView
-                style="@style/first_text_in_row_profile_style"
-                android:id="@+id/profile_optimal_kal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/profile_table_layout"
-                android:text="@string/daily_calorie_amount"
-                android:paddingTop="40dp"
-                />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -116,7 +108,7 @@
                 android:layout_margin="8dp"
                 android:text="@string/kilocalories"
                 android:textStyle="bold"
-                android:layout_below="@id/profile_optimal_kal"/>
+              />
             <TextView
                 style="@style/first_text_in_row_profile_style"
                 android:id="@+id/profile_aim_kal"

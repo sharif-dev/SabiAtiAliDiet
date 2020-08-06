@@ -7,7 +7,7 @@ import android.widget.EditText;
 
 import com.example.sabriatialidiet.R;
 import com.example.sabriatialidiet.db.DataBase;
-import com.example.sabriatialidiet.entities.Dish;
+import com.example.sabriatialidiet.models.Dish;
 
 public class DishesEditorActivity extends AppCompatActivity {
     static Dish dish;

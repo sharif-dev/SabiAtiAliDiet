@@ -70,6 +70,14 @@
             android:contentDescription="@string/next_day" />
     </RelativeLayout>
 
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher"
+        android:id="@+id/update_calories"
+
+        />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

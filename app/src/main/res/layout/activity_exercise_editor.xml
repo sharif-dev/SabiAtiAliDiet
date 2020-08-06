@@ -39,13 +39,7 @@
             android:textColor="@color/my_text_color"
             android:textColorHint="@color/my_text_color"/>
     </LinearLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/my_text_color"
-        android:text="@string/exercise_formula"
-        android:textSize="20sp"/>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -61,12 +55,7 @@
             android:inputType="number"
             android:textSize="20sp"
             android:textColor="@color/my_text_color" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/my_text_color"
-            android:textSize="20sp"
-            android:text="@string/exercise_formula_p1"/>
+
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -75,12 +64,7 @@
             android:inputType="number"
             android:textSize="20sp"
             android:textColor="@color/my_text_color"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/my_text_color"
-            android:textSize="20sp"
-            android:text = "@string/exercise_formula_p2"/>
+
     </LinearLayout>
         </LinearLayout>
     </ScrollView>

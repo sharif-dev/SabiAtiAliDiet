@@ -6,9 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.example.sabriatialidiet.entities.Day;
-import com.example.sabriatialidiet.entities.Dish;
-import com.example.sabriatialidiet.entities.Exercise;
+import com.example.sabriatialidiet.models.Day;
+import com.example.sabriatialidiet.models.Dish;
+import com.example.sabriatialidiet.models.Exercise;
 import com.example.sabriatialidiet.utils.MyDate;
 import com.example.sabriatialidiet.utils.Pair;
 
@@ -46,8 +46,6 @@ public class DataBase {
 
 
     public static final int MAX_RECORD_WIDTH = 700;
-    public static int dishSortId = 0;
-    public static int exercisesSortId = 0;
 
     private static Context context;
     private static DataBase database;
@@ -79,12 +77,7 @@ public class DataBase {
 
 
     public Cursor getDishes() {
-//        switch (dishSortId) {
-//            case 1:
-//                return mDB.query(DISH_TABLE, null, null, null, null, null, DISH_COLUMN_NAME);
-//            case 2:
-//                return mDB.query(DISH_TABLE, null, null, null, null, null, DISH_COLUMN_CALORIES_PER_100_GM);
-//        }
+
         return mDB.query(DISH_TABLE, null, null, null, null, null, null);
     }
 
@@ -125,14 +118,7 @@ public class DataBase {
 
 
     public Cursor getExercises() {
-//        switch (exercisesSortId) {
-//            case 1:
-//                return mDB.query(EXERCISE_TABLE, null, null, null, null, null, EXERCISE_COLUMN_NAME);
-//            case 2:
-//                return mDB.query(EXERCISE_TABLE, null, null, null, null, null, EXERCISE_COLUMN_TIME_COEFF);
-//            case 3:
-//                return mDB.query(EXERCISE_TABLE, null, null, null, null, null, EXERCISE_COLUMN_QUANTITY_COEFF);
-//        }
+
         return mDB.query(EXERCISE_TABLE, null, null, null, null, null, null);
     }
 
@@ -220,17 +206,11 @@ public class DataBase {
         }
     }
 
-    public void deleteDayExercise(MyDate date, String exerciseName) {
-        mDB.delete(DAYS_EXERCISE_TABLE, DAYS_COLUMN_DATE + " = " + date.getTime() + " AND " + EXERCISE_COLUMN_NAME + " = '" + exerciseName + "'", null);
-    }
 
     public void deleteDayExercises(MyDate date) {
         mDB.delete(DAYS_EXERCISE_TABLE, DAYS_COLUMN_DATE + " = " + date.getTime(), null);
     }
 
-    public Cursor getDaysDishesData() {
-        return mDB.query(DAYS_DISHES_TABLE, null, null, null, null, null, null);
-    }
 
     public Cursor getAllDayDishes(MyDate date) {
         Cursor cursor = mDB.query(DAYS_DISHES_TABLE, null, DAYS_COLUMN_DATE + "=" + date.getTime(), null, null, null, null);
@@ -272,16 +252,9 @@ public class DataBase {
         }
     }
 
-    public void deleteDayDish(MyDate date, String dishName) {
-        mDB.delete(DAYS_DISHES_TABLE, DAYS_COLUMN_DATE + " = " + date.getTime() + " AND " + DISH_COLUMN_NAME + " = '" + dishName + "'", null);
-    }
 
     public void deleteDayDishes(MyDate date) {
         mDB.delete(DAYS_DISHES_TABLE, DAYS_COLUMN_DATE + " = " + date.getTime(), null);
-    }
-
-    public Cursor getDaysRecords() {
-        return mDB.query(DAYS_TABLE, null, null, null, null, null, null);
     }
 
     public Cursor getDayRecord(MyDate date) {
@@ -306,9 +279,6 @@ public class DataBase {
         mDB.insert(DAYS_TABLE, null, cv);
     }
 
-    public void deleteDayRecord(MyDate date) {
-        mDB.delete(DAYS_TABLE, DAYS_COLUMN_DATE + " = " + date.getTime(), null);
-    }
 
 
     public Day getDay(MyDate date) {
@@ -375,7 +345,8 @@ public class DataBase {
             db.execSQL("create table " + DAYS_DISHES_TABLE + " ( " + DAYS_COLUMN_DATE + " integer, " + DISH_COLUMN_NAME + " text, " + DAYS_DISH_COLUMN_WEIGHT + " integer default 100," + "FOREIGN KEY(" + DAYS_COLUMN_DATE + ") REFERENCES " + DAYS_TABLE + "(" + DAYS_COLUMN_DATE + "), FOREIGN KEY(" + DISH_COLUMN_NAME + ") REFERENCES " + DISH_TABLE + "(" + DISH_COLUMN_NAME + ") " + ");");
             db.execSQL("create table " + DAYS_EXERCISE_TABLE + " ( " + DAYS_COLUMN_DATE + " integer, " + EXERCISE_COLUMN_NAME + " text, " + DAYS_EXERCISE_COLUMN_TIME + " integer default 0," + DAYS_EXERCISE_COLUMN_QUANTITY + " integer default 0," + "FOREIGN KEY(" + DAYS_COLUMN_DATE + ") REFERENCES " + DAYS_TABLE + "(" + DAYS_COLUMN_DATE + "), FOREIGN KEY(" + EXERCISE_COLUMN_NAME + ") REFERENCES " + EXERCISE_TABLE + "(" + EXERCISE_COLUMN_NAME + ") " + ");");
             db.execSQL("create table " + DAYS_TABLE + " ( " + DAYS_COLUMN_DATE + " integer primary key, " + DAYS_COLUMN_RECORD + " varchar(" + MAX_RECORD_WIDTH + ") default ''" + ");");
-            defaultFillDishTable(db); // fill table of dishes
+            defaultFillDishTable(db);
+            defaultFillExerciseTable(db);
         }
 
         private void defaultFillExerciseTable(SQLiteDatabase db) {

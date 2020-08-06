@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CalorieCounter</string>
+    <string name="app_name">SabiAtiAliDiet</string>
     <string name="action_settings">Settings</string>
 
     <!--General-->
@@ -9,7 +9,7 @@
     <string name="centimeters">cm</string>
     <string name="kilograms">kg</string>
     <string name="years">years</string>
-    <string name="kilocalories">kcal</string>
+    <string name="kilocalories">kilo calories</string>
     <string name="grams">gm</string>
 
     <string name="cancel">Cancel</string>
@@ -29,17 +29,6 @@
 
     <string name="changed_date">Date updated!</string>
 
-    <string name="order_by_alphabet">By alphabet</string>
-    <string name="order_by_caloricity">By calorie</string>
-    <string name="order_by_time_coeff">By time</string>
-    <string name="order_by_quantity_coeff">By quantity coeff</string>
-    <string name="order_by_id">By id</string>
-
-    <string name="for_day">For day</string>
-    <string name="for_week">For week</string>
-    <string name="for_month">For month</string>
-    <string name="for_year">For year</string>
-
     <!--Profile-->
     <string name="profile">Profile</string>
     <string name="sex">Sex</string>
@@ -48,8 +37,7 @@
     <string name="height">Height</string>
     <string name="weight">Weight</string>
     <string name="age">Age</string>
-    <string name="daily_calorie_amount">Daily calorie amount</string>
-    <string name="calories_goal">Goal (calories per day)</string>
+    <string name="calories_goal">Calories to lose (calories per day)</string>
 
 
     <!--Diary-->
@@ -85,13 +73,7 @@
     <string name="pick_exercise">Pick exercise</string>
     <string name="exercise_name">Exercise name</string>
 
-    <string name="exercise_formula">Formula</string>
-    <string name="exercise_formula_p1">*time*weight + </string>
-    <string name="exercise_formula_p2">*quantity*weight</string>
-    <string name="exercise_formula_description">Where</string>
-    <string name="exercise_formula_description_weight">w — your weight (kg)</string>
-    <string name="exercise_formula_description_time">t — time (sec)</string>
-    <string name="exercise_formula_description_quantity">q — sets quantity</string>
+
     <string name="enter_exercise_time_quantity">Enter time and quantity</string>
 
     <!--Statistics-->

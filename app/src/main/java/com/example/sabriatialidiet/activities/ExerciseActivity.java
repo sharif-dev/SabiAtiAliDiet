@@ -3,8 +3,6 @@ package com.example.sabriatialidiet.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -13,7 +11,7 @@ import android.widget.Toast;
 
 import com.example.sabriatialidiet.R;
 import com.example.sabriatialidiet.db.DataBase;
-import com.example.sabriatialidiet.entities.Exercise;
+import com.example.sabriatialidiet.models.Exercise;
 import com.example.sabriatialidiet.listeners.ToWindowOnClickWithClosing;
 
 import java.util.ArrayList;

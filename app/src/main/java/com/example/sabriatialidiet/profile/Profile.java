@@ -1,4 +1,4 @@
-package com.example.sabriatialidiet.preferences;
+package com.example.sabriatialidiet.profile;
 
 import android.app.Activity;
 import android.content.Context;
