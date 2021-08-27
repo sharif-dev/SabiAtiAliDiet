@@ -1,2 +1,4 @@
-Mobile Programming Project - Android - Fall 2020
-Sharif University of Technology
+Mobile Programming Project - Fall 2020
+
+* Diet App - Android
+*Sharif University of Technology
